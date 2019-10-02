@@ -75,7 +75,6 @@ def find_project_label (yaml)
   if name then
       return name
   end
-
   return nil
 end
 
@@ -239,7 +238,6 @@ clean = true
 
 branch_name = Time.now.strftime("updated-stats-%Y%m%d")
 
-
 Dir.chdir($root_directory) do
   system('git config --global user.name "github-actions"')
   system('git config --global user.email "github-actions@users.noreply.github.com"')
@@ -262,7 +260,6 @@ unless clean
     client.create_pull_request(current_repo, "gh-pages", branch_name, "Updated project stats", body)
   end
 end
-
 
 finish = Time.now
 delta = finish - start
